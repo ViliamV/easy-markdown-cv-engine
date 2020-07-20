@@ -1,0 +1,12 @@
+Welcome to Easy Markdown CV!
+Available commands are:
+  public
+  html
+  pdf
+  pdfbw
+  pdfprint
+  jpg
+  debug
+
+Use any of them with --help to learn more or go to:
+https://github.com/ViliamV/easy-markdown-cv
