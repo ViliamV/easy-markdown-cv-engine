@@ -39,7 +39,7 @@ h2:before {
 #gitlab:before, .icon-gitlab:before {
   content: "\e902";
 }
-#interests:before, .icon-heart:before {
+#volunteering:before, .icon-heart:before {
   content: "\e903";
 }
 #homepage:before, .icon-home:before {

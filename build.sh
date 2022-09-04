@@ -103,7 +103,7 @@ esac
 colorprint "Env:"
 echo "input directory: $indir"
 echo "output directory: $outdir"
-echo -e "command: FIRST_ARG\n"
+echo -e "command: $FIRST_ARG\n"
 
 # create outdir
 mkdir -p "${outdir}"
@@ -122,7 +122,7 @@ cp -ru "${indir}${images}" "${outdir}" 2> /dev/null
 
 colorprint "Creating HTML"
 pandoc -s \
-  --from=markdown+smart \
+  --from=markdown\
   --to=html5 \
   $vars \
   -o "$outdir/$filename.html" \
