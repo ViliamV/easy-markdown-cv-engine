@@ -1,6 +1,7 @@
-FROM buildkite/puppeteer:v3.0.4
+FROM buildkite/puppeteer:10.0.0
 LABEL maintainer="viliam@valent.email"
 
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN apt-get -y update
 RUN apt-get -y install pandoc
 

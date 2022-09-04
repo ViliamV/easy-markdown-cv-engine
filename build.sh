@@ -122,7 +122,7 @@ cp -ru "${indir}${images}" "${outdir}" 2> /dev/null
 
 colorprint "Creating HTML"
 pandoc -s \
-  --from=markdown\
+  --from=markdown+smart \
   --to=html5 \
   $vars \
   -o "$outdir/$filename.html" \
@@ -135,13 +135,15 @@ if [[ $FIRST_ARG == pdf* ]]; then
   colorprint "Converting to PDF"
   node topdf.js \
     "$outdir/$filename.html" \
-    "$outdir/$filename.pdf"
+    "$outdir/$filename.pdf" \
+    2>/dev/null
 fi
 if [[ $FIRST_ARG == jpg ]]; then
   colorprint "Converting to JPEG"
   node tojpg.js \
     "$outdir/$filename.html" \
-    "$outdir/$filename.jpg"
+    "$outdir/$filename.jpg" \
+    2>/dev/null
 fi
 if [[ $FIRST_ARG =~ ^(jpg|pdf.*) ]]; then
   # Cleanup
